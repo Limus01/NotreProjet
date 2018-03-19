@@ -1,0 +1,108 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le :  lun. 19 mars 2018 à 21:54
+-- Version du serveur :  10.1.31-MariaDB
+-- Version de PHP :  5.6.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `todolist`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id_contact` int(50) NOT NULL,
+  `cname` varchar(50) NOT NULL,
+  `cemail` varchar(50) NOT NULL,
+  `cphone` varchar(50) NOT NULL,
+  `cmessage` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `contacts`
+--
+
+INSERT INTO `contacts` (`id_contact`, `cname`, `cemail`, `cphone`, `cmessage`) VALUES
+(1, 'limus', 'limus@gmail.com', '677690560', 'I will really like to know more'),
+(2, 'gilly', 'gills@yahoo.com', '679741874', 'hope you are home please take good care if baby');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(1, 'lima', 'lima@ex.org', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 'max', 'max@ex.com', '6742923575546471370cc028f289db40'),
+(3, 'bob', 'bob@gmail.com', 'c83e4046a7c5d3c4bf4c292e1e6ec681'),
+(4, 'france', 'fran@org.com', 'e165d4f2174b66a7d1a95cb204d296eb'),
+(5, 'pet', 'pet@org', '51dc30ddc473d43a6011e9ebba6ca770'),
+(6, 'gilly', 'gil@gmail.com', '3f9f8ae5a2aa5d9cd7cd662324aa91fa'),
+(7, 'liora', 'liora@gmail.com', '6b8da6138872a6d43246ca785dd63fde');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id_contact`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id_contact` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
